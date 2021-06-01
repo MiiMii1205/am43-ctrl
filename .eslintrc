@@ -1,0 +1,18 @@
+{
+    "env" : {
+        "es2021" : true,
+        "node" : true,
+        "mocha" : true
+    },
+    "extends" : [
+        "plugin:@typescript-eslint/recommended"
+        //    "prettier/@typescript-eslint"
+    ],
+    "parser" : "@typescript-eslint/parser",
+    "settings" : {
+        "import/resolver" : {
+            "typescript" : { }
+            // this loads <rootdir>/tsconfig.json to eslint
+        }
+    }
+}
