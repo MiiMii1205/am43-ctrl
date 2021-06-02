@@ -2,9 +2,9 @@
   "name": "am43-ctrl",
   "version": "1.0.0",
   "description": "Control an AM43 Blinds Engine by HTTP or MQTT",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "bin": {
-    "am43ctrl": "dist/index.js"
+    "am43ctrl": "src/index.ts"
   },
   "scripts": {
     "test": "echo \"No tests currently\"",
@@ -12,7 +12,7 @@
     "dev": "npm run watch",
     "watch": "tsc --watch",
     "postinstall": "npm build",
-    "build": "tsc",
+    "build": "tsc --build",
     "debug": "node --inspect --experimental-modules --enable-source-maps -r source-map-support/register dist/index.js",
     "start": "node --experimental-modules --enable-source-maps -r source-map-support/register dist/index.js 02:FC:98:A9:44:6B -d --url mqtt://10.0.0.42 -p 'uS8z-5>snAE(%xJP' -u mqttu"
   },
