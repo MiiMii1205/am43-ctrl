@@ -82,7 +82,7 @@ Promise.resolve(args.argv).then((argv) => {
 
     const idsToConnectTo = argv._.filter(name => (typeof name === "number") || !name.startsWith("_")).map(name => (typeof name === "number") ? name : name.replace(/:/g, "").toLowerCase());
 
-    if (idsToConnectTo.length === 0) {
+    if (idsToConnectTo.length <= 0) {
         log("ERROR: No MACs defined");
         yargs.showHelp();
         process.exit(-1);
@@ -194,7 +194,6 @@ Promise.resolve(args.argv).then((argv) => {
         } else {
             log(`Found ${id} but will not connect as it was not specified in the list of devices ${idsToConnectTo}`)
         }
-
 
     });
 });
