@@ -1,12 +1,12 @@
 import type {BlindStates} from "class/BlindStates";
-import type {IAM43Actions} from "class/IAM43Actions";
+import type {AM43Actions} from "class/AM43Actions";
 import type {DateTime} from "luxon";
 
 export default interface IAM43Status {
     id?: string
-    lastconnect?: DateTime | null
-    lastsuccess?: DateTime | null
-    lastaction: IAM43Actions
+    lastConnect?: DateTime | null
+    lastSuccess?: DateTime | null
+    lastAction: AM43Actions
     state: BlindStates
     battery?: number | null
     light?: number | null

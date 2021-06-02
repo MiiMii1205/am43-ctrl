@@ -1,6 +1,6 @@
 import mqtt from "mqtt";
 import type AM43Device from "./AM43Device";
-import {IAM43Actions} from "./IAM43Actions";
+import {AM43Actions} from "./AM43Actions";
 
 const coverTopic = "cover/";
 const sensorTopic = "sensor/";
@@ -32,13 +32,13 @@ export default class MQTTConnector {
                 if (topic.endsWith("set")) {
                     switch (parseInt(message.toString())) {
 
-                        case IAM43Actions.OPEN:
+                        case AM43Actions.OPEN:
                             device.log("requesting cover open");
                             return device.am43Open();
-                        case  IAM43Actions.CLOSE:
+                        case  AM43Actions.CLOSE:
                             device.log("requesting cover close");
                             return device.am43Close();
-                        case IAM43Actions.STOP:
+                        case AM43Actions.STOP:
                             device.log("requesting cover stop");
                             return device.am43Stop();
                         default:
@@ -69,9 +69,9 @@ export default class MQTTConnector {
             availability_topic: `${deviceTopic}/connection`,
             payload_available: "Online",
             payload_not_available: "Offline",
-            payload_open: IAM43Actions.OPEN,
-            payload_close: IAM43Actions.CLOSE,
-            payload_stop: IAM43Actions.STOP,
+            payload_open: AM43Actions.OPEN,
+            payload_close: AM43Actions.CLOSE,
+            payload_stop: AM43Actions.STOP,
             position_template: "{{value_json['position']}}",
             unique_id: `am43_${device.id}_cover`,
             device: deviceInfo

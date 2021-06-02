@@ -150,7 +150,7 @@ Promise.resolve(args.argv).then((argv) => {
         lastSuccess = null;
         // Get most recent successtime from any device
         for (const id of ids) {
-            const deviceSuccessTime: DateTime | null = devices[id].successtime;
+            const deviceSuccessTime: DateTime | null = devices[id].successTime;
             if (lastSuccess == null || (deviceSuccessTime != null && deviceSuccessTime > lastSuccess)) {
                 lastSuccess = deviceSuccessTime;
             }
