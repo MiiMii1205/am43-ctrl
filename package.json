@@ -2,18 +2,15 @@
   "name": "am43-ctrl",
   "version": "1.0.0",
   "description": "Control an AM43 Blinds Engine by HTTP or MQTT",
-  "main": "./src/index.ts",
+  "main": "index.ts",
   "bin": {
-    "am43ctrl": "./src/index.ts"
+    "am43ctrl": "index.ts"
   },
   "scripts": {
     "test": "echo \"No tests currently\"",
-    "lint": "./node_modules/.bin/eslint src/index.ts src/*.js",
-    "dev": "npm run watch",
-    "watch": "tsc --watch",
-    "build": "tsc --build",
-    "debug": "node --inspect --experimental-modules --enable-source-maps -r source-map-support/register dist/index.js",
-    "start": "node --experimental-modules --enable-source-maps -r source-map-support/register dist/index.js 02:FC:98:A9:44:6B -d --url mqtt://10.0.0.42 -p 'uS8z-5>snAE(%xJP' -u mqttu"
+    "lint": "./node_modules/.bin/eslint *.ts",
+    "debug": "ts-node --inspect index.ts",
+    "start": "ts-node index.ts 02:FC:98:A9:44:6B -d --url mqtt://10.0.0.42 -p 'uS8z-5>snAE(%xJP' -u mqttu"
   },
   "author": "binsentsu",
   "license": "MIT",
@@ -37,6 +34,12 @@
     "node": ">=10.16.0"
   },
   "dependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/express": "^4.17.12",
+    "@types/luxon": "^1.26.5",
+    "@types/node": "^14.14.34",
+    "@types/readline-sync": "^1.4.3",
+    "@types/yargs": "^17.0.0",
     "@abandonware/noble": "^1.9.2-12",
     "debug": "^4.3.1",
     "express": "^4.16.3",
@@ -45,16 +48,10 @@
     "readline-sync": "^1.4.9",
     "source-map-support": "^0.5.19",
     "yargs": "^13.2.2",
+    "@tsconfig/node14": "^1.0.0",
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "@tsconfig/node14": "^1.0.0",
-    "@types/debug": "^4.1.5",
-    "@types/express": "^4.17.12",
-    "@types/luxon": "^1.26.5",
-    "@types/node": "^14.14.34",
-    "@types/readline-sync": "^1.4.3",
-    "@types/yargs": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.22.0",

@@ -1,5 +1,5 @@
 import express, {Express, Request, Response} from "express";
-import AM43Device from "../classes/AM43Device";
+import AM43Device from "./AM43Device";
 import debug from "debug";
 import IAM43Status from "../interfaces/IAM43Status";
 
