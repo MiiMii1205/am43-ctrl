@@ -1,6 +1,6 @@
 import mqtt from "mqtt";
 import type AM43Device from "./AM43Device";
-import {AM43Actions} from "./AM43Actions";
+import {AM43Actions} from "../enums/AM43Actions";
 
 const coverTopic = "cover/";
 const sensorTopic = "sensor/";

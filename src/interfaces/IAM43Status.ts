@@ -1,5 +1,5 @@
-import type {BlindStates} from "class/BlindStates";
-import type {AM43Actions} from "class/AM43Actions";
+import type {BlindStates} from "enums/BlindStates";
+import type {AM43Actions} from "enums/AM43Actions";
 import type {DateTime} from "luxon";
 
 export default interface IAM43Status {

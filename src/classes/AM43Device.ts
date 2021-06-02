@@ -2,11 +2,11 @@ import EventEmitter from "events";
 
 import debug from "debug";
 import type {Peripheral} from "@abandonware/noble";
-import type IAM43Status from "../interface/IAM43Status";
-import {BlindStates} from "./BlindStates";
-import {actionKeys, AM43Actions} from "./AM43Actions";
+import type IAM43Status from "../interfaces/IAM43Status";
+import {BlindStates} from "../enums/BlindStates";
+import {actionKeys, AM43Actions} from "../enums/AM43Actions";
 import {DateTime} from "luxon";
-import {AM43NotificationIdentifiers, identifierRequestsKeys} from "./AM43NotificationIdentifiers";
+import {AM43NotificationIdentifiers, identifierRequestsKeys} from "../enums/AM43NotificationIdentifiers";
 
 const serviceUUID = "0000fe5000001000800000805f9b34fb";
 const am43CharUUID = "0000fe5100001000800000805f9b34fb";

@@ -1,33 +1,18 @@
 #!/usr/bin/env node
 
 import debug from "debug";
-import AM43Device from "./class/AM43Device";
-
+import AM43Device from "./classes/AM43Device";
 import yargs from "yargs";
-
 import type {Peripheral} from "@abandonware/noble";
 import noble from "@abandonware/noble";
-
 import readlineSync from "readline-sync";
-
-import MQTTConnector from "./class/MQTTConnector";
-
-import WebBinding from "./class/WebConnector";
+import MQTTConnector from "./classes/MQTTConnector";
+import WebBinding from "./classes/WebConnector";
 import assert from "assert";
 import {DateTime, Duration} from "luxon";
 
 const log = debug("am43*");
 const debugLog = debug("am43");
-
-/*
-
-mac 02:FC:98:A9:44:6B
-mqtt url: mqtt://10.0.0.42:1883
-user: mqttu
-passwrd : uS8z-5%EsnAE(%25xJP
-
-
- */
 
 const args = yargs
     .usage("Usage: $0 MAC1 MAC2 --express-port 3000 --url [mqtt|ws][s]://yourbroker.example.com")
