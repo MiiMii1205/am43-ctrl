@@ -11,7 +11,8 @@
     "lint": "./node_modules/.bin/eslint src/index.ts src/*.js",
     "dev": "npm run watch",
     "watch": "tsc --watch",
-    "postinstall": "tsc",
+    "postinstall": "npm build",
+    "build": "tsc",
     "debug": "node --inspect --experimental-modules --enable-source-maps -r source-map-support/register dist/index.js",
     "start": "node --experimental-modules --enable-source-maps -r source-map-support/register dist/index.js 02:FC:98:A9:44:6B -d --url mqtt://10.0.0.42 -p 'uS8z-5>snAE(%xJP' -u mqttu"
   },
