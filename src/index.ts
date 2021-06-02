@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env ts-node
 
 import debug from "debug";
 import AM43Device from "./classes/AM43Device";
