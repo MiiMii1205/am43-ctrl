@@ -2,9 +2,9 @@
   "name": "am43-ctrl",
   "version": "1.0.0",
   "description": "Control an AM43 Blinds Engine by HTTP or MQTT",
-  "main": "src/index.ts",
+  "main": "./src/index.ts",
   "bin": {
-    "am43ctrl": "src/index.ts"
+    "am43ctrl": "./src/index.ts"
   },
   "scripts": {
     "test": "echo \"No tests currently\"",
